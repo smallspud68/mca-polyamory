@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.ps5.mcapolyamory.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AdminCommandMixin",
+    "BreedableRelationshipMixin",
+    "FamilyTreeNodeMixin",
+    "GetFamilyRequestMixin",
+    "PlayerSaveDataMixin",
+    "RelationshipItemMixin",
+    "RelationshipMixin",
+    "ServerInteractionManagerMixin",
+    "VillagerCommandHandlerMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

@@ -1,0 +1,25 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+group = project.maven_group
+version = project.mod_version
+base { archivesName = project.archives_name }
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    // MCA Reborn is installed separately; only compiled against
+    compileOnly files("libs/mca-fabric-8.1.11+26.1.2.jar")
+}
+
+processResources {
+    def version = project.version
+    inputs.property "version", version
+    filesMatching("fabric.mod.json") { expand "version": version }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+}
